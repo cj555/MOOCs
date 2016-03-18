@@ -9,7 +9,7 @@ public class IndexController {
 
 	@RequestMapping("/index")
 	public String index(){
-		return "/WEB-INF/jsp/index.jsp";
+		return "index";
 	}
 	
 }
