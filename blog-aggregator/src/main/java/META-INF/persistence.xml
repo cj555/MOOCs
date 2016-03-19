@@ -4,5 +4,6 @@
 		<class>io.cj555.entity.User</class>
 		<class>io.cj555.entity.Role</class>
 		<class>io.cj555.entity.Blog</class>
+		<class>io.cj555.entity.Item</class>
 	</persistence-unit>
 </persistence>
