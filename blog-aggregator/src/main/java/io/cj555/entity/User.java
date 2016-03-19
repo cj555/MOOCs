@@ -3,6 +3,7 @@ package io.cj555.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
@@ -15,18 +16,17 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	private String name;
 	private String email;
 	private String password;
-	
+
 	@ManyToMany
 	@JoinTable
 	private List<Role> roles;
-	
-	@OneToMany(mappedBy = "user")
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Blog> blogs;
-	
 
 	public List<Blog> getBlogs() {
 		return blogs;
@@ -67,8 +67,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
 
 	public Integer getId() {
 		return id;
