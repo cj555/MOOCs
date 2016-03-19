@@ -10,7 +10,7 @@
 	<h1>${blog.name}</h1>
 	<p>${blog.url}</p>
 
-	<table>
+	<table class="table table-hover table-bordered">
 		<thead>
 			<tr>
 				<th>Title</th>
