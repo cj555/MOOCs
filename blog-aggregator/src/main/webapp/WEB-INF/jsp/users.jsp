@@ -2,17 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<table>
+
+<br>
+<br>
+<table class="table table-hover table-bordered">
+
+
 	<thead>
-		<tr>
+		<tr class="success">
 			<th>user name</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${users}" var="user" >
-		<tr>
-			<td>${user.name}</td>
-		</tr>
+		<c:forEach items="${users}" var="user">
+			<tr>
+				<td>${user.name}</td>
+			</tr>
 		</c:forEach>
 	</tbody>
 </table>

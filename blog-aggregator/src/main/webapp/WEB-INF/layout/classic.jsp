@@ -23,7 +23,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><tiles:getAsString name="title" />Title</title>
+<title><tiles:getAsString name="title" /> Blog Aggregator</title>
 </head>
 <body>
 	<div class="container">
