@@ -7,7 +7,6 @@
 <br>
 <table class="table table-hover table-bordered">
 
-
 	<thead>
 		<tr class="success">
 			<th>user name</th>
