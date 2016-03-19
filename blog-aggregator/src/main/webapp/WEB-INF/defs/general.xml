@@ -20,6 +20,13 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
 		<put-attribute name="current" value="users" />
 	</definition>
+	
+	<definition name="user-detail" extends="common">
+		<put-attribute name="title" value="User Detail" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user_detail.jsp" />
+		<put-attribute name="current" value="users" />
+	</definition>
+	
 
 </tiles-definitions>
 
