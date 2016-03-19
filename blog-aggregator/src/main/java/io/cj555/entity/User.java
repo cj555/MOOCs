@@ -1,8 +1,13 @@
 package io.cj555.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -14,6 +19,22 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	
+	@ManyToMany
+	@JoinTable
+	private List<Role> roles;
+	
+	@OneToMany(mappedBy = "user")
+	private List<Blog> blogs;
+	
+
+	public List<Blog> getBlogs() {
+		return blogs;
+	}
+
+	public void setBlogs(List<Blog> blogs) {
+		this.blogs = blogs;
+	}
 
 	public String getName() {
 		return name;
@@ -21,6 +42,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	public String getEmail() {
