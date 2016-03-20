@@ -44,16 +44,19 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<spring:url value="/" />">Blog Aggregator</a>
+					<a class="navbar-brand" href="<spring:url value="/" />">Blog
+						Aggregator</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="${current == 'index' ? 'active' : ''}"><a
 							href='<spring:url value="/" />'>Home</a></li>
 
-						<li class="${current == 'users' ? 'active' : ''}"><a
-							href='<spring:url value="/users.html" />'>Users</a></li>
-
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current == 'users' ? 'active' : ''}"><a
+								href='<spring:url value="/users.html" />'>Users</a></li>
+						</security:authorize>
+						
 						<li class="${current == 'register' ? 'active' : ''}"><a
 							href='<spring:url value="/register.html" />'>Registration</a></li>
 
