@@ -17,6 +17,7 @@ import io.cj555.repository.ItemRepository;
 import io.cj555.repository.UserRepository;
 
 @Service
+@Transactional
 public class UserService {
 
 	@Autowired
@@ -55,6 +56,11 @@ public class UserService {
 		}
 		user.setBlogs(blogs);
 		return user;
+	}
+
+	public void save(User user) {
+		userRepository.save(user);
+		
 	}
 
 }

@@ -42,5 +42,6 @@
 
 	<jpa:repositories base-package="io.cj555.repository" />
 
-
+	<import resource="security.xml"/>
+	
 </beans>
