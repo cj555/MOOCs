@@ -46,8 +46,6 @@ public class Blog {
 	}
 
 
-	
-	
 	public Integer getId() {
 		return id;
 	}

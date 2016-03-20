@@ -74,7 +74,7 @@ public class InitDbService {
 		item1.setBlog(blogQuantocracy);
 		item1.setTitle("first");
 		item1.setLink("http://www.quantocracy.com");
-		item1.setPublishedData(new Date());
+		item1.setPublishedDate(new Date());
 		itemRepository.save(item1);
 		
 		
@@ -82,7 +82,7 @@ public class InitDbService {
 		item2.setBlog(blogQuantocracy);
 		item2.setTitle("second");
 		item2.setLink("http://www.quantocracy.com");
-		item2.setPublishedData(new Date());
+		item2.setPublishedDate(new Date());
 		itemRepository.save(item2);
 		
 	

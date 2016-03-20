@@ -20,22 +20,12 @@ public class Item {
 	private String description;
 
 	@Column(name = "published_date")
-	private Date publishedData;
+	private Date publishedDate;
 	private String link;
 	
 	@ManyToOne
 	@JoinColumn(name = "blog_id")
 	private Blog blog;
-	
-	
-	
-	public Blog getBlog() {
-		return blog;
-	}
-
-	public void setBlog(Blog blog) {
-		this.blog = blog;
-	}
 
 	public Integer getId() {
 		return id;
@@ -61,12 +51,12 @@ public class Item {
 		this.description = description;
 	}
 
-	public Date getPublishedData() {
-		return publishedData;
+	public Date getPublishedDate() {
+		return publishedDate;
 	}
 
-	public void setPublishedData(Date publishedData) {
-		this.publishedData = publishedData;
+	public void setPublishedDate(Date publishedDate) {
+		this.publishedDate = publishedDate;
 	}
 
 	public String getLink() {
@@ -76,5 +66,16 @@ public class Item {
 	public void setLink(String link) {
 		this.link = link;
 	}
+
+	public Blog getBlog() {
+		return blog;
+	}
+
+	public void setBlog(Blog blog) {
+		this.blog = blog;
+	}
+	
+	
+	
 
 }
