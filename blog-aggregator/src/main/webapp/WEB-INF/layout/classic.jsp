@@ -69,6 +69,10 @@
 						<security:authorize access="isAuthenticated()">
 							<li><a href='<spring:url value="/logout" />'>Logout</a></li>
 						</security:authorize>
+						
+						<security:authorize access="isAuthenticated()">
+							<li><a href='<spring:url value="/account.html" />'>My account</a></li>
+						</security:authorize>
 
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Dropdown <b class="caret"></b></a>
