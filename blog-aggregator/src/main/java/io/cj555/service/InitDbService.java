@@ -25,72 +25,62 @@ import io.cj555.repository.UserRepository;
 @Transactional
 public class InitDbService {
 
-	@Autowired 
+	@Autowired
 	private RoleRepository roleRepository;
-	
-	@Autowired 
+
+	@Autowired
 	private BlogRepository blogRepository;
-	
-	@Autowired 
+
+	@Autowired
 	private UserRepository userRepository;
-	
-	
-	@Autowired 
+
+	@Autowired
 	private ItemRepository itemRepository;
-	
-	
+
 	@PostConstruct
-	public void init(){
-		
+	public void init() {
+
 		Role roleUser = new Role();
 		roleUser.setName("ROLE_USER");
 		roleRepository.save(roleUser);
-		
+
 		Role roleAdmin = new Role();
 		roleAdmin.setName("ROLE_ADMIN");
 		roleRepository.save(roleAdmin);
-		
-		
-		
+
 		User userAdmin = new User();
+		userAdmin.setEnabled(true);
 		userAdmin.setName("admin");
-		BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		userAdmin.setPassword(encoder.encode("admin"));
-		List<Role> roles = new ArrayList<Role>();
 		
+		List<Role> roles = new ArrayList<Role>();
+
 		roles.add(roleAdmin);
 		roles.add(roleUser);
 		userAdmin.setRoles(roles);
 		userRepository.save(userAdmin);
-		
-		
-		
-		
+
 		Blog blogQuantocracy = new Blog();
 		blogQuantocracy.setName("Quantocracy");
 		blogQuantocracy.setUrl("http://feeds.feedburner.com/Quantocracy?format=xml");
 		blogQuantocracy.setUser(userAdmin);
 		blogRepository.save(blogQuantocracy);
-		
-		
+
 		Item item1 = new Item();
 		item1.setBlog(blogQuantocracy);
 		item1.setTitle("first");
 		item1.setLink("http://www.quantocracy.com");
 		item1.setPublishedDate(new Date());
 		itemRepository.save(item1);
-		
-		
+
 		Item item2 = new Item();
 		item2.setBlog(blogQuantocracy);
 		item2.setTitle("second");
 		item2.setLink("http://www.quantocracy.com");
 		item2.setPublishedDate(new Date());
 		itemRepository.save(item2);
-		
-	
-		
+
 	}
-	
-	
+
 }
