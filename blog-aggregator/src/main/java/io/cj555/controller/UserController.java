@@ -2,10 +2,14 @@ package io.cj555.controller;
 
 import java.security.Principal;
 
+import javax.validation.Valid;
+
 import org.junit.runners.Parameterized.Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,13 +67,18 @@ public class UserController {
 
 	@RequestMapping("/register")
 	public String showRegister() {
-
 		return "user-register";
 
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String doRegister(@ModelAttribute("user") User user) {
+	public String doRegister(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+
+			return "user-register";
+
+		}
 
 		userService.save(user);
 
@@ -89,7 +98,13 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/account", method = RequestMethod.POST)
-	public String doAddBlog(@ModelAttribute("blog") Blog blog, Principal principal) {
+	public String doAddBlog(Model model, @Valid @ModelAttribute("blog") Blog blog, Principal principal,
+			BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+
+			return account(model, principal);
+		}
 
 		String name = principal.getName();
 
