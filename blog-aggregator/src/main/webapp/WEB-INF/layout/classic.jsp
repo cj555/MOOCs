@@ -66,9 +66,6 @@
 						<li class="${current == 'register' ? 'active' : ''}"><a
 							href='<spring:url value="/register.html" />'>Registration</a></li>
 
-						<li class="${current == 'account' ? 'active' : ''}"><a
-							href='<spring:url value="/register.html" />'>Registration</a></li>
-
 						<security:authorize access="!isAuthenticated()">
 							<li class="${current == 'login' ? 'active' : ''}"><a
 								href='<spring:url value="/login.html" />'>Login</a></li>
