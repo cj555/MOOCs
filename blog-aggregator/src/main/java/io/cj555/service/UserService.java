@@ -92,4 +92,9 @@ public class UserService {
 		
 	}
 
+	public User findOne(String userName) {
+		// TODO Auto-generated method stub
+		return userRepository.findByName(userName);
+	}
+
 }

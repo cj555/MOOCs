@@ -126,7 +126,7 @@
 										url : true
 									}
 								},
-								
+
 								highlight : function(element) {
 									$(element).closest('.form-group')
 											.removeClass('has-success')
