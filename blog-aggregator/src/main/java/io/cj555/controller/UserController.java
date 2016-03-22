@@ -98,18 +98,13 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/account", method = RequestMethod.POST)
-	public String doAddBlog(Model model, @Valid @ModelAttribute("blog") Blog blog, Principal principal,
-			BindingResult bindingResult) {
-
-		if (bindingResult.hasErrors()) {
-
+	public String doAddBlog(Model model, @Valid @ModelAttribute("blog") Blog blog, BindingResult result,
+			Principal principal) {
+		if (result.hasErrors()) {
 			return account(model, principal);
 		}
-
 		String name = principal.getName();
-
 		blogService.saveBlog(blog, name);
-
 		return "redirect:/account.html";
 
 	}

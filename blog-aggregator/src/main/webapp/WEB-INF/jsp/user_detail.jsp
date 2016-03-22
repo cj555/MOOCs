@@ -25,7 +25,7 @@
 						<label for="name" class="col-sm-2 control-label">Name: </label>
 						<div class="col-sm-10">
 							<form:input path="name" cssClass="form-control" />
-							<form:errors path="name" /> 
+							<form:errors path="name" />
 						</div>
 					</div>
 
@@ -33,7 +33,7 @@
 						<label for="name" class="col-sm-2 control-label">Url: </label>
 						<div class="col-sm-10">
 							<form:input path="url" cssClass="form-control" />
-							<form:errors path="url" /> 
+							<form:errors path="url" />
 						</div>
 					</div>
 
@@ -70,14 +70,16 @@
 	<div class="tab-content">
 		<c:forEach items="${user.blogs}" var="blog">
 			<div class="tab-pane" id="blog_${blog.id}">
-			
-				<h1><c:out value="${blog.name}" /></h1>
-				
+
+				<h1>
+					<c:out value="${blog.name}" />
+				</h1>
+
 				<p>
-				<a href="<spring:url value="/blog/remove/${blog.id}.html" />"
+					<a href="<spring:url value="/blog/remove/${blog.id}.html" />"
 						class="btn btn-danger triggerRemove">Remove blog</a>
-						<c:out value ="${blog.url}"/>
-						
+					<c:out value="${blog.url}" />
+
 				</p>
 
 				<table class="table table-bordered table-hover table-striped">
