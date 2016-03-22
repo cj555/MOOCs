@@ -23,7 +23,8 @@
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
@@ -65,6 +66,8 @@
 						<li class="${current == 'register' ? 'active' : ''}"><a
 							href='<spring:url value="/register.html" />'>Registration</a></li>
 
+						<li class="${current == 'account' ? 'active' : ''}"><a
+							href='<spring:url value="/register.html" />'>Registration</a></li>
 
 						<security:authorize access="!isAuthenticated()">
 							<li class="${current == 'login' ? 'active' : ''}"><a

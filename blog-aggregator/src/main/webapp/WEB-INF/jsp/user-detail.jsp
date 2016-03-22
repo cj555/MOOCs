@@ -6,10 +6,11 @@
 
 <h1>${user.name}</h1>
 
-<button type="button" class="btn btn-primary btn-large"
+<!-- <button type="button" class="btn btn-primary btn-large"
 	data-toggle="modal" data-target="#myModal">Add blog</button>
-
-<form:form commandName="blog" cssClass="form-horizontal">
+ -->
+ 
+<%-- <form:form commandName="blog" cssClass="form-horizontal">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="purchaseLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -47,7 +48,7 @@
 		</div>
 	</div>
 
-</form:form>
+</form:form> --%>
 
 <div>
 	<br /> <br />

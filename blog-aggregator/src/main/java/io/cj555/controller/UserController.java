@@ -92,8 +92,8 @@ public class UserController {
 		String name = principal.getName();
 
 		model.addAttribute("user", userService.findOneWithName(name));
-
-		return "user-detail";
+		
+		return "account";
 
 	}
 
