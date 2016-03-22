@@ -34,6 +34,7 @@
 	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title><tiles:getAsString name="title" /> Blog Aggregator</title>
 </head>
 <body>

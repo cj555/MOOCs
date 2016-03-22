@@ -83,6 +83,7 @@ public class UserController {
 	public String doAddBlog(@ModelAttribute("blog") Blog blog, Principal principal) {
 
 		String name = principal.getName();
+		
 		blogService.saveBlog(blog, name);
 
 		return "redirect:/account.html";
