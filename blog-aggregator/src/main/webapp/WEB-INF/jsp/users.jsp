@@ -19,6 +19,9 @@
 				<td> <a href="<spring:url value="/users/${user.id}.html" />" />
 					${user.name}
 				</td>
+				<td><a
+					href="<spring:url value="/users/remove/${user.id}.html" />"
+					class="btn btn-danger"><abbr> Remove </abbr></a></td>
 			</tr>
 		</c:forEach>
 	</tbody>

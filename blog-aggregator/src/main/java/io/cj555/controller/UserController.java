@@ -2,6 +2,7 @@ package io.cj555.controller;
 
 import java.security.Principal;
 
+import org.junit.runners.Parameterized.Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +41,14 @@ public class UserController {
 
 		model.addAttribute("users", userService.findAll());
 		return "users";
+
+	}
+
+	@RequestMapping("users/remove/{id}")
+	public String removeUser(@PathVariable int id) {
+
+		userService.delete(id);
+		return ("redirect:/users.html");
 
 	}
 
@@ -83,9 +92,17 @@ public class UserController {
 	public String doAddBlog(@ModelAttribute("blog") Blog blog, Principal principal) {
 
 		String name = principal.getName();
-		
+
 		blogService.saveBlog(blog, name);
 
+		return "redirect:/account.html";
+
+	}
+
+	@RequestMapping("/blog/remove/{id}")
+	public String removeBlog(@PathVariable int id) {
+
+		blogService.delete(id);
 		return "redirect:/account.html";
 
 	}
