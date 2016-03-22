@@ -74,7 +74,7 @@
 				<p>
 				<a href="<spring:url value="/blog/remove/${blog.id}.html" />"
 						class="btn btn-danger triggerRemove">Remove blog</a>
-						<c:out value ="${blog.url }"/>
+						<c:out value ="${blog.url}"/>
 						
 				</p>
 
