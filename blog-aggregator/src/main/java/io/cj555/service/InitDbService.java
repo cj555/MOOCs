@@ -67,19 +67,19 @@ public class InitDbService {
 		blogQuantocracy.setUser(userAdmin);
 		blogRepository.save(blogQuantocracy);
 
-		Item item1 = new Item();
-		item1.setBlog(blogQuantocracy);
-		item1.setTitle("first");
-		item1.setLink("http://www.quantocracy.com");
-		item1.setPublishedDate(new Date());
-		itemRepository.save(item1);
-
-		Item item2 = new Item();
-		item2.setBlog(blogQuantocracy);
-		item2.setTitle("second");
-		item2.setLink("http://www.quantocracy.com");
-		item2.setPublishedDate(new Date());
-		itemRepository.save(item2);
+//		Item item1 = new Item();
+//		item1.setBlog(blogQuantocracy);
+//		item1.setTitle("first");
+//		item1.setLink("http://www.quantocracy.com");
+//		item1.setPublishedDate(new Date());
+//		itemRepository.save(item1);
+//
+//		Item item2 = new Item();
+//		item2.setBlog(blogQuantocracy);
+//		item2.setTitle("second");
+//		item2.setLink("http://www.quantocracy.com");
+//		item2.setPublishedDate(new Date());
+//		itemRepository.save(item2);
 
 	}
 
