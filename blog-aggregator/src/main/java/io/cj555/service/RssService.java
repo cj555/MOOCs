@@ -26,34 +26,25 @@ import io.cj555.rss.TRssItem;
 
 @Service
 public class RssService {
-	
-	public List<Item> getItems(File file) throws RssException{
-		
+
+	public List<Item> getItems(File file) throws RssException {
 		return getItems(new StreamSource(file));
-		
 	}
-	
-	
-	public List<Item> getItems(String url) throws RssException{
-		
+
+	public List<Item> getItems(String url) throws RssException {
 		return getItems(new StreamSource(url));
-		
 	}
-	
-	
+
 	private List<Item> getItems(Source source) throws RssException {
 		
-		List<Item> list = new ArrayList<Item>();
-		
+		ArrayList<Item> list = new ArrayList<Item>();
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
 			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			JAXBElement<TRss> jAXBElement = unmarshaller.unmarshal(source, TRss.class);
-			TRss rss = jAXBElement.getValue();
+			JAXBElement<TRss> jaxbElement = unmarshaller.unmarshal(source, TRss.class);
+			TRss rss = jaxbElement.getValue();
+
 			List<TRssChannel> channels = rss.getChannel();
-			
-			
-			
 			for (TRssChannel channel : channels) {
 				List<TRssItem> items = channel.getItem();
 				for (TRssItem rssItem : items) {
@@ -66,19 +57,12 @@ public class RssService {
 					item.setPublishedDate(pubDate);
 					list.add(item);
 				}
-
 			}
-
 		} catch (JAXBException e) {
 			throw new RssException(e);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RssException(e);
 		}
-		
 		return list;
-		
-
 	}
-
 }
