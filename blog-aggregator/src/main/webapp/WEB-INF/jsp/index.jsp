@@ -7,7 +7,7 @@
 <br>
 
 
-<h1>Latest news from the java world:</h1>
+<h1>Latest news from the data world:</h1>
 <table class="table table-bordered table-hover table-striped">
 	<thead>
 		<tr>

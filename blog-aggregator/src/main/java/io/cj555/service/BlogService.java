@@ -31,16 +31,6 @@ public class BlogService {
 	@Autowired
 	private ItemRepository itemRepository;
 
-	// 1hour
-	@Scheduled(fixedDelay = 3600000)
-	public void reloadBlogs() {
-		List<Blog> blogs = blogRepository.findAll();
-		for (Blog blog : blogs) {
-			saveItems(blog);
-		}
-
-	}
-
 	public void saveItems(Blog blog) {
 		try {
 			List<Item> items = rssService.getItems(blog.getUrl());
@@ -56,25 +46,29 @@ public class BlogService {
 		}
 	}
 
-	public void saveBlog(Blog blog, String name) {
-		// TODO Auto-generated method stub
+	// 1 hour = 60 seconds * 60 minutes * 1000
+	@Scheduled(fixedDelay = 3600000)
+	public void reloadBlogs() {
+		List<Blog> blogs = blogRepository.findAll();
+		for (Blog blog : blogs) {
+			saveItems(blog);
+		}
+	}
+
+	public void save(Blog blog, String name) {
 		User user = userRepository.findByName(name);
 		blog.setUser(user);
 		blogRepository.save(blog);
 		saveItems(blog);
+	}
 
+	@PreAuthorize("#blog.user.name == authentication.name or hasRole('ROLE_ADMIN')")
+	public void delete(@P("blog") Blog blog) {
+		blogRepository.delete(blog);
 	}
 
 	public Blog findOne(int id) {
-
 		return blogRepository.findOne(id);
-
-	}
-
-	@PreAuthorize("#blog.user==authentication.name or hasRole('ROLE_ADMIN')")
-	public void delete(@P("blog") Blog blog) {
-		blogRepository.delete(blog);
-
 	}
 
 }

@@ -50,7 +50,7 @@ public class UserController {
 			return account(model, principal);
 		}
 		String name = principal.getName();
-		blogService.saveBlog(blog, name);
+		blogService.save(blog, name);
 		return "redirect:/account.html";
 	}
 
