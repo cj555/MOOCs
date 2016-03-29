@@ -5,10 +5,6 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +35,83 @@
 <title><tiles:getAsString name="title" /> Blog Aggregator</title>
 </head>
 <body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Data Science Space</h1>
+			<p class="lead">Basic grid layouts to get you familiar with
+				building within the Bootstrap grid system.</p>
+		</div>
+
+
+
+		<div id='intellect' class="title-b">
+			<h3>
+				数据源 <a href="http://gate.guokr.com/submit/interest/1/" class="">
+					<button type="submit" class="btn btn-default">Add more</button>
+				</a>
+			</h3>
+			<script type="text/javascript">
+				$(function() {
+					$('#example').popover();
+				});
+			</script>
+			<p>Click on button to see Popover</p>
+
+			<a href="#" id="example" class="btn btn-primary" rel="popover"
+				data-content="This is the body of Popover"
+				data-original-title="Creativity Tuts">数学</a>
+
+		</div>
+
+		<div class="bs-example tooltip-demo">
+			<script type="text/javascript">
+				$('a[data-toggle="tooltip"]').tooltip({
+					animated : 'fade',
+					placement : 'bottom',
+				});
+			</script>
+			<p>
+				<a href="#" data-toggle="tooltip" title="tooltips"
+					data-original-title="Default tooltip">数学</a>
+			</p>
+		</div>
+
+		<div class="categorys-hd fix">
+			<div class="categorys">
+				<div class="category">
+					<h3>
+						<b class="category-1-1"></b>数学<s></s>
+					</h3>
+					<ul class="list">
+						<li><a data-desc="中文数学杂志《数学文化》网站" target="_blank"
+							href="http://www.global-sci.org/mc/">数学文化</a></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--   <nav class="navbar navbar-inverse navbar-fixed-top">      
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>/.nav-collapse
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div>/.container -->
+
 	<div class="container">
 		<!-- Static navbar -->
 		<div class="navbar navbar-default" role="navigation">
