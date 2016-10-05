@@ -41,57 +41,88 @@
 			<p class="lead">Basic grid layouts to get you familiar with
 				building within the Bootstrap grid system.</p>
 		</div>
-
-
-
-		<div id='intellect' class="title-b">
-			<h3>
-				数据源 <a href="http://gate.guokr.com/submit/interest/1/" class="">
-					<button type="submit" class="btn btn-default">Add more</button>
+		<div class="row">
+			<div class="col-lg-6">
+				<a href="http://gate.guokr.com/submit/interest/1/" class="">
+					<button type="button" class="btn btn-xs">+</button> <u>大类</u>
 				</a>
-			</h3>
-			<script type="text/javascript">
-				$(function() {
-					$('#example').popover();
-				});
-			</script>
-			<p>Click on button to see Popover</p>
-
-			<a href="#" id="example" class="btn btn-primary" rel="popover"
-				data-content="This is the body of Popover"
-				data-original-title="Creativity Tuts">数学</a>
-
+			</div>
 		</div>
-
-		<div class="bs-example tooltip-demo">
-			<script type="text/javascript">
-				$('a[data-toggle="tooltip"]').tooltip({
-					animated : 'fade',
-					placement : 'bottom',
-				});
-			</script>
-			<p>
-				<a href="#" data-toggle="tooltip" title="tooltips"
-					data-original-title="Default tooltip">数学</a>
-			</p>
-		</div>
-
-		<div class="categorys-hd fix">
-			<div class="categorys">
-				<div class="category">
-					<h3>
-						<b class="category-1-1"></b>数学<s></s>
-					</h3>
-					<ul class="list">
-						<li><a data-desc="中文数学杂志《数学文化》网站" target="_blank"
-							href="http://www.global-sci.org/mc/">数学文化</a></li>
-					</ul>
-
+		<br>
+		<div class="row">
+			<div class="col-lg-6">
+				<h5>类</h5>
+				<div class="row">
+					<div class="col-lg-2">
+						<a href="#" id="" class="subClass" rel="popover"
+							data-content="This is the body of Popover"
+							data-original-title="数学">数学</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="#" class="subClass" rel="popover"
+							data-content="This is the body of Popover"
+							data-original-title="数学">数学</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="#" class="subClass" rel="popover"
+							data-content="This is the body of Popover"
+							data-original-title="数学">数学</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="#" id="example4" class="" rel="popover"
+							data-content="This is the body of Popover"
+							data-original-title="数学">数学</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="#" id="example5" class="" rel="popover"
+							data-content="This is the body of Popover"
+							data-original-title="数学">数学</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h5>类</h5>
+				<div class="row">
+					<div class="col-lg-2">下属类1</div>
+					<div class="col-lg-2">下属类1</div>
+					<div class="col-lg-2">下属类1</div>
+					<div class="col-lg-2">下属类1</div>
+					<div class="col-lg-2">下属类1</div>
+					<div class="col-lg-2">下属类1</div>
 				</div>
 			</div>
 		</div>
+
+		<div id='intellect' class="title-b">
+			<h3>
+				<a href="http://gate.guokr.com/submit/interest/1/" class="">
+					<button type="submit" class="btn btn-default">+</button>
+				</a> 数据源
+			</h3>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(function() {
+						$('.subClass').popover();
+					});
+				});
+			</script>
+
+			<br />
+			<ul class="list">
+				<li style="overflow: visible; z-index: 0; position: relative;"><a
+					data-desc="中文数学杂志《数学文化》网站" target="_blank"
+					href="http://www.global-sci.org/mc/">数学文化</a></li>
+
+				<li style="overflow: visible; z-index: 0; position: relative;"><a
+					data-desc="著名互联网数学杂志" target="_blank"
+					href="http://plus.maths.org/content/">Plus</a></li>
+				<a href="#" id="example" class="" rel="popover"
+					data-content="This is the body of Popover" data-original-title="数学">数学</a>
+			</ul>
+		</div>
+
 	</div>
-	</div>
+
 	<!--   <nav class="navbar navbar-inverse navbar-fixed-top">      
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

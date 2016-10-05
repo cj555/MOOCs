@@ -1,0 +1,15 @@
+base
+lattice
+ggplot2
+caret
+randomForest
+survival
+gbm
+plyr
+rattle
+rpart
+rpart.plot
+knitr
+Rcpp
+Amelia
+ipred
