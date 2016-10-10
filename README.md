@@ -21,7 +21,7 @@
 
 
 3. Econometrics: Methods and Applications, Erasmus University Rotterdam, Cousera
-
+check (here)[https://github.com/cj555/MOOCs/blob/master/econometrics-coursera/lecture%20notes/cheat%20sheet%20on%20econometrics.pdf] for the mindmap of the course
 
 > 
 
