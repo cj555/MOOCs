@@ -3,6 +3,7 @@
 ## List of the module
 
 1. Data Science Specialization, JHU, Coursera
+
 > 
 
 	- The Data Scientist’s Toolbox
@@ -15,6 +16,7 @@
 	- Practical Machine Learning
 	- Developing Data Products
 	- Data Science Capstone
+	
 2. Introduction to Big Data with Apache Spark, Edx
 
 
