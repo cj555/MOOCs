@@ -18,7 +18,17 @@
 2. Introduction to Big Data with Apache Spark, Edx
 
 
-3. 
+3. Econometrics: Methods and Applications, Erasmus University Rotterdam, Cousera
+
+
+> 
+
+	- Simple Regression 
+	- Multiple Regression
+	- Model Specification
+	- Endogeneity
+	- Binary Choice
+	- Time Series
 
 
 
